@@ -5,7 +5,7 @@ from flask_jwt_extended import jwt_required
 from starlette.status import HTTP_405_METHOD_NOT_ALLOWED, HTTP_500_INTERNAL_SERVER_ERROR
 from starlette.exceptions import HTTPException
 
-from routes.credit_card.controllers.credit_card_controller import CreditCardController
+from src.main.routes.credit_card.controllers.credit_card_controller import CreditCardController
 
 route = Blueprint('credit_card', __name__)
 

@@ -12,3 +12,15 @@ services:
       - MYSQL_ROOT_PASSWORD=czsun6MSWFD2Zxf4AXgbN53KC7HUjhpQ8awR
     ports:
       - '0.0.0.0:3306:3306'
+
+
+  app:
+    container_name: "app"
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.main.app:asgi_app --bind 0.0.0.0:8000
+    ports:
+      - "0.0.0.0:8000:8000"
+    depends_on:
+      - database

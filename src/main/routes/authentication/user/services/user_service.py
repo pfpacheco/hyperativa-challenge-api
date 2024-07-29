@@ -1,11 +1,11 @@
-from database.db import SessionLocal
-
 from starlette.status import HTTP_404_NOT_FOUND, HTTP_422_UNPROCESSABLE_ENTITY
 
 from starlette.exceptions import HTTPException
 
-from routes.authentication.user.vo.user_vo import UserVO
-from routes.authentication.user.models.user_model import UserModel
+from src.main.database.db import SessionLocal
+
+from src.main.routes.authentication.user.vo.user_vo import UserVO
+from src.main.routes.authentication.user.models.user_model import UserModel
 
 
 class UserService:
