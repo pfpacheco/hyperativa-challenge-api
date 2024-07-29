@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required
 from starlette.exceptions import HTTPException
 from starlette.status import HTTP_405_METHOD_NOT_ALLOWED
 
-from routes.authentication.user.controllers.user_controller import UserController
+from src.main.routes.authentication.user.controllers.user_controller import UserController
 
 route = Blueprint('user', __name__)
 

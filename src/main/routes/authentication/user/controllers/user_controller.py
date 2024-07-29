@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from flask import Request, Response, make_response
 from flask_jwt_extended import create_access_token
@@ -7,8 +7,8 @@ from starlette.status import HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_403_FOR
     HTTP_500_INTERNAL_SERVER_ERROR
 from starlette.exceptions import HTTPException
 
-from routes.authentication.user.vo.user_vo import UserVO
-from routes.authentication.user.services.user_service import UserService
+from src.main.routes.authentication.user.vo.user_vo import UserVO
+from src.main.routes.authentication.user.services.user_service import UserService
 
 
 class UserController:

@@ -1,11 +1,13 @@
 import os
 
-from flask import Flask
 from dotenv import load_dotenv
-from flask_jwt_extended import JWTManager
 
-from routes.credit_card.credit_card_route import route as credit_card_route
-from routes.authentication.user.user_route import route as user_route
+from flask import Flask
+from flask_jwt_extended import JWTManager
+from asgiref.wsgi import WsgiToAsgi
+
+from src.main.routes.credit_card.credit_card_route import route as credit_card_route
+from src.main.routes.authentication.user.user_route import route as user_route
 
 
 load_dotenv()
@@ -23,3 +25,5 @@ app.config['UPLOAD_FOLDER'] = os.getenv('UPLOAD_FOLDER')
 app.config['ALLOWED_EXTENSIONS'] = os.getenv('ALLOWED_EXTENSIONS')
 
 jwt = JWTManager(app)
+
+asgi_app = WsgiToAsgi(app)

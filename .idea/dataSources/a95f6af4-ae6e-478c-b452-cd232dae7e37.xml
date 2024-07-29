@@ -926,7 +926,7 @@ hyperativa|schema||admin||UPDATE|G</Grants>
     </collation>
     <schema id="288" parent="1" name="hyperativa">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-29.19:19:32</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-29.22:05:14</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="information_schema">
@@ -1067,7 +1067,7 @@ hyperativa|schema||admin||UPDATE|G</Grants>
       <UnderlyingIndexName>uc_t_item</UnderlyingIndexName>
     </key>
     <column id="319" parent="294" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

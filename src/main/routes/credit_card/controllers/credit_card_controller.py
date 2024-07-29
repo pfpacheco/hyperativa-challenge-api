@@ -6,8 +6,8 @@ from starlette.exceptions import HTTPException
 from starlette.status import (HTTP_302_FOUND, HTTP_201_CREATED, HTTP_500_INTERNAL_SERVER_ERROR,
                               HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND)
 
-from routes.credit_card.vo.creditcard_vo import HeaderVO, ItemVO
-from routes.credit_card.services.credit_card_service import CreditCardService
+from src.main.routes.credit_card.vo.creditcard_vo import HeaderVO, ItemVO
+from src.main.routes.credit_card.services.credit_card_service import CreditCardService
 
 
 class CreditCardController:

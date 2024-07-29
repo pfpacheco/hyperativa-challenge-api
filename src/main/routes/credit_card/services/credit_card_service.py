@@ -3,10 +3,10 @@ from typing import List
 from starlette.exceptions import HTTPException
 from starlette.status import HTTP_404_NOT_FOUND, HTTP_422_UNPROCESSABLE_ENTITY
 
-from database.db import SessionLocal
+from src.main.database.db import SessionLocal
 
-from routes.credit_card.vo.creditcard_vo import HeaderVO, ItemVO
-from routes.credit_card.models.credit_card_model import HeaderModel, ItemModel
+from src.main.routes.credit_card.vo.creditcard_vo import HeaderVO, ItemVO
+from src.main.routes.credit_card.models.credit_card_model import HeaderModel, ItemModel
 
 
 class CreditCardService:

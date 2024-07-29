@@ -1,12 +1,12 @@
-FROM python:3.9.8
+FROM python:3.9.19-slim-bullseye
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /opt/hyperativa
 
-WORKDIR /usr/src/main
+WORKDIR /opt/hyperativa
 
-COPY ../../ .
+COPY . .
 
-RUN pip install --upgrade pip setuptools wheel easy_setup
-RUN pip install --no-cache-dir -r ./requirements.txt
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8000

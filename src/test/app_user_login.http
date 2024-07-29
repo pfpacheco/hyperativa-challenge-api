@@ -1,7 +1,7 @@
 ### GET request to login
 
 
-POST http://localhost:5000/rest/api/v1/login
+POST http://localhost:8000/rest/api/v1/login
 Content-Type: application/json
 
 {

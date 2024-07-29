@@ -5,38 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80b662a1-0637-41ad-a4de-9dfe454c5344" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/hyperativa-challenge-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__docker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__docker/compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__docker/docks/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migration/V0001_01_init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_ingestion/flat_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/database/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/controllers/user_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/models/user_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/services/user_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/user_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/vo/user_vo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/credit_card/controllers/credit_card_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/credit_card/credit_card_route.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/credit_card/models/credit_card_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/credit_card/services/credit_card_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/routes/credit_card/vo/creditcard_vo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/app_user_login.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/batch_create_credit_card.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/create_single_credit_card.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/create_user.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/find_credit_card_number.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a95f6af4-ae6e-478c-b452-cd232dae7e37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a95f6af4-ae6e-478c-b452-cd232dae7e37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121050.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121102.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121529.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121542.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121547.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121605.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121609.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121628.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T121820.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T122000.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T122006.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-07-29T122014.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__docker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__docker/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/__docker/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__docker/docks/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/authentication/user/controllers/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/controllers/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/authentication/user/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/models/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/authentication/user/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/services/user_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/authentication/user/user_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/authentication/user/user_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/credit_card/controllers/credit_card_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/credit_card/controllers/credit_card_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/credit_card/credit_card_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/credit_card/credit_card_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/credit_card/models/credit_card_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/credit_card/models/credit_card_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/routes/credit_card/services/credit_card_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/routes/credit_card/services/credit_card_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/app_user_login.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/app_user_login.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/batch_create_credit_card.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/batch_create_credit_card.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create_single_credit_card.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create_single_credit_card.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create_user.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create_user.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/find_credit_card_number.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/find_credit_card_number.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +103,7 @@
     "HTTP Request.find_credit_card_number | GET request to example server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/home/ppacheco/workspace/python-projects/hyperativa-challenge-api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,11 +123,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/__docker" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/routes" />
       <recent name="$PROJECT_DIR$/src/main/routes/credit_card" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="Flask server.hyperativa-challenge-api">
@@ -140,7 +143,7 @@
     <configuration name="All in find_credit_card_number" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/test/find_credit_card_number.http">
       <method v="2" />
     </configuration>
-    <configuration name="find_credit_card_number | GET request to example server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/find_credit_card_number.http" requestIdentifier="GET request to example server" runType="Run single request">
+    <configuration name="find_credit_card_number | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/find_credit_card_number.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="hyperativa-challenge-api" type="Python.FlaskServer">
@@ -172,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.find_credit_card_number | GET request to example server" />
+        <item itemvalue="HTTP Request.find_credit_card_number | #3" />
         <item itemvalue="HTTP Request.All in find_credit_card_number" />
+        <item itemvalue="HTTP Request.All in create_user" />
         <item itemvalue="HTTP Request.All in batch_create_credit_card" />
         <item itemvalue="HTTP Request.All in create_single_credit_card" />
-        <item itemvalue="HTTP Request.All in create_user" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +202,7 @@
       <workItem from="1722201588687" duration="25555000" />
       <workItem from="1722228475970" duration="3274000" />
       <workItem from="1722231801850" duration="983000" />
-      <workItem from="1722255566132" duration="22482000" />
+      <workItem from="1722255566132" duration="30347000" />
     </task>
     <servers />
   </component>
