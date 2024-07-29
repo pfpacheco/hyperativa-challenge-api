@@ -1,0 +1,14 @@
+services:
+
+  database:
+    container_name: 'database'
+    image: 'bitnami/mysql:latest'
+    cpus: 2
+    environment:
+      - TZ=America/Sao_Paulo
+      - MYSQL_USER=admin
+      - MYSQL_DATABASE=hyperativa
+      - MYSQL_PASSWORD=qjXy9VDs8Cz4r5emEhubWF7g
+      - MYSQL_ROOT_PASSWORD=czsun6MSWFD2Zxf4AXgbN53KC7HUjhpQ8awR
+    ports:
+      - '0.0.0.0:3306:3306'

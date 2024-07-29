@@ -1,0 +1,5 @@
+{
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI4MTY3NiwianRpIjoiMTIwYzBiNWQtYzkwMy00Mjk2LWEwM2MtNGI5OTY4NmYzYWU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjgxNjc2LCJjc3JmIjoiYmM4ZmY4ZTctNTExOC00YzkyLTkxMDQtNjRhOTI1NmUxMzhkIiwiZXhwIjoxNzIyMjgzNDc2fQ.CHe-Af9T1AGp3SHcfdGtOrVdyMFDFzdh_s9jlbyGehQ",
+  "code": 202,
+  "status": "Accepted"
+}

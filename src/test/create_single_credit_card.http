@@ -1,0 +1,54 @@
+### POST request to server and create a credit card register
+
+
+### First Register
+
+POST http://localhost:5000/rest/api/v1/credit_card
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI4MTY3NiwianRpIjoiMTIwYzBiNWQtYzkwMy00Mjk2LWEwM2MtNGI5OTY4NmYzYWU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjgxNjc2LCJjc3JmIjoiYmM4ZmY4ZTctNTExOC00YzkyLTkxMDQtNjRhOTI1NmUxMzhkIiwiZXhwIjoxNzIyMjgzNDc2fQ.CHe-Af9T1AGp3SHcfdGtOrVdyMFDFzdh_s9jlbyGehQ
+
+
+{
+    "name": "Paulo F. Pacheco",
+    "date": "20240728",
+    "batch_name": "LOTE0001",
+    "registers": 1,
+    "line": 1,
+    "batch_number": 1,
+    "credit_card_number": "4456897922969999"
+}
+
+
+### Second Register
+
+POST http://localhost:5000/rest/api/v1/credit_card
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI4MTY3NiwianRpIjoiMTIwYzBiNWQtYzkwMy00Mjk2LWEwM2MtNGI5OTY4NmYzYWU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjgxNjc2LCJjc3JmIjoiYmM4ZmY4ZTctNTExOC00YzkyLTkxMDQtNjRhOTI1NmUxMzhkIiwiZXhwIjoxNzIyMjgzNDc2fQ.CHe-Af9T1AGp3SHcfdGtOrVdyMFDFzdh_s9jlbyGehQ
+
+
+{
+    "name": "Douglas Terci",
+    "date": "20240725",
+    "batch_name": "LOTE0002",
+    "registers": 1,
+    "line": 1,
+    "batch_number": 1,
+    "credit_card_number": "4456897922968888"
+}
+
+### Third Register
+
+POST http://localhost:5000/rest/api/v1/credit_card
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI4MTY3NiwianRpIjoiMTIwYzBiNWQtYzkwMy00Mjk2LWEwM2MtNGI5OTY4NmYzYWU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjgxNjc2LCJjc3JmIjoiYmM4ZmY4ZTctNTExOC00YzkyLTkxMDQtNjRhOTI1NmUxMzhkIiwiZXhwIjoxNzIyMjgzNDc2fQ.CHe-Af9T1AGp3SHcfdGtOrVdyMFDFzdh_s9jlbyGehQ
+
+
+{
+    "name": "Kolemman Schulemann ",
+    "date": "20240725",
+    "batch_name": "LOTE0003",
+    "registers": 1,
+    "line": 1,
+    "batch_number": 1,
+    "credit_card_number": "5156897922963333"
+}

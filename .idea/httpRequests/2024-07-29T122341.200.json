@@ -1,0 +1,9 @@
+{
+  "code": 302,
+  "content": {
+    "card_holder_name": "Douglas Terci",
+    "card_masked_number": "4456-XXXX-XXXX-8888",
+    "is_active": true
+  },
+  "status": "FOUND"
+}
