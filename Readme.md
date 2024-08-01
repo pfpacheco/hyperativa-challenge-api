@@ -44,10 +44,16 @@ O arquivo usado para carga é o ``flat_data.txt`` na pasta ``/file_ingestion/``
 Não existem outros pré requisitos além do .env
 
 ENVIRONMENT=development
-DEBUG=True
+
+DEBUG=Truen
+
 SECRET_KEY=sJm}nwNZHt/?M)Y5DF'j_p4rf^S83-.U2(VaC$,d>&y{+v9*P;
+
 JWT_SECRET_KEY=MX9)0x*A*obnNMtX6ujTG#2ZUG+0zAjBXccn?geZ}a#kMi=qHF
+
 UPLOAD_FOLDER =/home/ppacheco/workspace/python-projects/hyperativa-challenge-api/file_ingestion
+
 ALLOWED_EXTENSIONS={'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
 SQLALCHEMY_DATABASE_URI=mysql+pymysql://admin:qjXy9VDs8Cz4r5emEhubWF7g@database:3306/hyperativa
 
