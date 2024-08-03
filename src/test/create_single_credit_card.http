@@ -50,3 +50,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
     "batch_number": 1,
     "credit_card_number": "5156897922963333"
 }
+
+### Fourth Register
+
+POST http://localhost:8000/rest/api/v1/credit_card
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
+
+
+{
+    "name": "Andy Warhol ",
+    "date": "20240725",
+    "batch_name": "LOTE0035",
+    "registers": 1,
+    "line": 1,
+    "batch_number": 1,
+    "credit_card_number": "5555897922963331"
+}
