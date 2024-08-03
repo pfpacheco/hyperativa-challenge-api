@@ -8,8 +8,7 @@
 
 POST http://localhost:8000/rest/api/v1/create_user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI5MDcyNywianRpIjoiZDVhYTBhODUtMWI4My00OTQwLWI3ZjEtMGZjYzk2OGYyMTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjkwNzI3LCJjc3JmIjoiZmEzOTJhZmMtZTliZS00NjlhLTg2MTItZjFhYzFjYTUzNWUyIiwiZXhwIjoxNzIyMjkyNTI3fQ.Cn6ATA7WNZXByLsTqbIVgH7leYZOXAChwrF4-xbD2C4
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
 
 {
     "name": "Steve Perry",
@@ -23,7 +22,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
 
 POST http://localhost:8000/rest/api/v1/create_user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjI5MDcyNywianRpIjoiZDVhYTBhODUtMWI4My00OTQwLWI3ZjEtMGZjYzk2OGYyMTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyMjkwNzI3LCJjc3JmIjoiZmEzOTJhZmMtZTliZS00NjlhLTg2MTItZjFhYzFjYTUzNWUyIiwiZXhwIjoxNzIyMjkyNTI3fQ.Cn6ATA7WNZXByLsTqbIVgH7leYZOXAChwrF4-xbD2C4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
 
 {
     "name": "Tony Morello",
@@ -31,4 +30,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
     "username": "tmorello",
     "password": "g%&#$94!",
     "password_confirmation": "g%&#$94!"
+}
+
+### Fourth User
+
+POST http://localhost:8000/rest/api/v1/create_user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
+
+{
+    "name": "Jim Jones",
+    "is_active": "True",
+    "username": "jjones",
+    "password": "tk?!==8b",
+    "password_confirmation": "tk?!==8b"
 }

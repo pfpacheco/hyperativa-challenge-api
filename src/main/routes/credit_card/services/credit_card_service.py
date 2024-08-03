@@ -76,21 +76,3 @@ class CreditCardService:
             raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(httpException))
         finally:
             self.db.flush()
-
-    async def batch_items(self, header_id: int, items: List[ItemVO]) -> List[ItemVO]:
-        try:
-            if items:
-                items_vo = []
-                for item in items:
-                    model = ItemModel(header_id=header_id, line=item.line, batch_number=item.batch_number,
-                                      credit_card_number=item.credit_card_number)
-                    self.db.add(model)
-                    self.db.commit()
-                    self.db.refresh(model)
-                    item_vo = ItemVO(id=model.id, header_id=model.header_id, line=item.line,
-                                     batch_number=item.batch_number, credit_card_number=item.credit_card_number,
-                                     created_at=model.created_at, updated_at=model.updated_at)
-                    items_vo.append(item_vo)
-                return items_vo
-        except Exception as httpException:
-            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(httpException))
