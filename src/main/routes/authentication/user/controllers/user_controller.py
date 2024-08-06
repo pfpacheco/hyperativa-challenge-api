@@ -3,7 +3,8 @@ from datetime import timedelta
 from flask import Request, Response, make_response
 from flask_jwt_extended import create_access_token
 
-from starlette.status import (HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST, HTTP_401_UNAUTHORIZED,
+from starlette.status import (HTTP_201_CREATED, HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST,
+                              HTTP_401_UNAUTHORIZED,
                               HTTP_406_NOT_ACCEPTABLE,
                               HTTP_500_INTERNAL_SERVER_ERROR)
 from starlette.exceptions import HTTPException
@@ -20,29 +21,30 @@ class UserController:
 
     async def create_user(self, request: Request) -> Response:
         if request.json is None:
-            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Request body is missing')
+            return make_response({'status_code': HTTP_404_NOT_FOUND, 'detail': 'Request body is missing'})
         else:
             body = request.json
             if body.get('password') != body.get('password_confirmation'):
-                raise HTTPException(status_code=HTTP_406_NOT_ACCEPTABLE, detail='Passwords do not match')
+                return make_response({'status_code': HTTP_406_NOT_ACCEPTABLE, 'detail':'Passwords do not match'})
             else:
                 user = UserVO(name=body.get('name'), is_active=body.get('is_active'), username=body.get('username'),
                               password=body.get('password'), email=body.get('email'))
                 try:
                     user_vo = await self.service.create_user(user)
-                    self.response = make_response(
-                        {
-                            'id': user_vo.id,
-                            'name': user_vo.name,
-                            'is_active': user_vo.is_active,
-                            'username': user_vo.username,
-                            'password': user_vo.password.replace(user_vo.password, len(user_vo.password) * '*'),
-                            'created_at': user_vo.created_at,
-                            'updated_at': user_vo.updated_at,
-                        }
-                    )
+                    self.response = make_response({'status_code': HTTP_201_CREATED,
+                                                   'detail': 'User created successfully',
+                                                   'content': {
+                                                        'id': user_vo.id,
+                                                        'name': user_vo.name,
+                                                        'is_active': user_vo.is_active,
+                                                        'username': user_vo.username,
+                                                        'password': user_vo.password.replace(user_vo.password, len(user_vo.password) * '*'),
+                                                        'created_at': user_vo.created_at,
+                                                        'updated_at': user_vo.updated_at
+                                                   }})
                 except Exception as httpException:
-                    raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail=str(httpException))
+                    return make_response({'status_code':HTTP_500_INTERNAL_SERVER_ERROR,
+                                          'detail': httpException.__cause__})
         return self.response
 
     async def process_login(self, request: Request) -> Response:
