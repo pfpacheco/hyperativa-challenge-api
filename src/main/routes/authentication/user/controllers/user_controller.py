@@ -3,8 +3,9 @@ from datetime import timedelta
 from flask import Request, Response, make_response
 from flask_jwt_extended import create_access_token
 
-from starlette.status import HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_403_FORBIDDEN, HTTP_406_NOT_ACCEPTABLE, \
-    HTTP_500_INTERNAL_SERVER_ERROR
+from starlette.status import (HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST, HTTP_401_UNAUTHORIZED,
+                              HTTP_406_NOT_ACCEPTABLE,
+                              HTTP_500_INTERNAL_SERVER_ERROR)
 from starlette.exceptions import HTTPException
 
 from src.main.routes.authentication.user.vo.user_vo import UserVO
@@ -45,30 +46,20 @@ class UserController:
         return self.response
 
     async def process_login(self, request: Request) -> Response:
-        if request.json.get('username') is None:
-            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Username is missing')
-        elif request.json.get('password') is None:
-            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Password is missing')
+        if request.json.get('username') is None or request.json.get('username') == '':
+            return make_response({'status_code': HTTP_400_BAD_REQUEST, 'detail': 'Username is missing'})
+        elif request.json.get('password') is None or request.json.get('password') == '':
+            return make_response({'status_code': HTTP_400_BAD_REQUEST, 'detail': 'Password is missing'})
         else:
             current_user = await self.service.find_user_by_username(username=request.json.get('username'))
             if current_user is None:
-                return make_response({
-                    'code': HTTP_404_NOT_FOUND,
-                    'status': 'Not Found',
-                    'detail': 'User not found'
-                })
+                return make_response({'status_code': HTTP_404_NOT_FOUND, 'detail': 'Not found'})
             else:
                 if current_user.password == request.json.get('password'):
                     access_token = create_access_token(identity=current_user.username,
                                                        expires_delta=timedelta(minutes=30))
-                    return make_response({
-                        'code': HTTP_202_ACCEPTED,
-                        'status': 'Accepted',
-                        'Authorization': f'Bearer {access_token}'
-                    })
+                    return make_response({'status_code': HTTP_202_ACCEPTED, 'authorization': f'Bearer {access_token}',
+                                          'detail': 'Accepted'})
+
                 else:
-                    return make_response({
-                        'code': HTTP_403_FORBIDDEN,
-                        'status': 'Forbidden',
-                        'detail': 'User not authorized'
-                    })
+                    return make_response({'status_code': HTTP_401_UNAUTHORIZED, 'detail': 'Unauthorized'})

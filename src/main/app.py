@@ -13,7 +13,6 @@ from src.main.routes.authentication.user.user_route import route as user_route
 load_dotenv()
 app = Flask(__name__)
 app.register_blueprint(user_route)
-
 app.register_blueprint(credit_card_route)
 
 app.config['DEBUG'] = os.getenv('DEBUG')

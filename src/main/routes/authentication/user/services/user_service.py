@@ -39,7 +39,7 @@ class UserService:
             else:
                 user_vo = self.db.query(UserModel).filter(UserModel.username == username).one_or_none()
                 if user_vo is None:
-                    raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='User not found')
+                    return None
                 else:
                     return user_vo
         except Exception as httpException:

@@ -20,6 +20,9 @@ insert into
     hyperativa.t_user(id, name, is_active, username, password, created_at, updated_at)
     values (null, 'Richie Sambora', true, 'rsambora', 's1QFNBdz', now(), now());
 
+insert into
+    hyperativa.t_user(id, name, is_active, username, password, created_at, updated_at)
+    values (null, 'test', true, 'test', 'test', now(), now());
 
 
 drop table
