@@ -6,7 +6,7 @@ import requests
 class UserControllerTest(unittest.TestCase):
 
     def setUp(self):
-        self.url = 'http://localhost:5000/rest/api/v1/login'
+        self.url = 'http://localhost:8000/rest/api/v1/login'
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
     @pytest.mark.asyncio
