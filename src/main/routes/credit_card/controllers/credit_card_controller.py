@@ -1,3 +1,9 @@
+import os
+
+from cryptography.fernet import Fernet
+
+from dotenv import load_dotenv
+
 from typing import List
 
 from flask import Request, make_response, Response
@@ -12,13 +18,15 @@ from src.main.routes.credit_card.vo.creditcard_vo import HeaderVO, ItemVO
 class CreditCardController:
 
     def __init__(self):
+        load_dotenv()
+        self.fernet = Fernet(os.getenv('LANGFLOW_SECRET_KEY'))
         self.service = CreditCardService()
 
     async def process_request(self, request: Request) -> Response:
         if request.json:
             body = request.json
             item = ItemVO(line=body.get('line'), batch_number=body.get('batch_number'),
-                          credit_card_number=body.get('credit_card_number'))
+                          credit_card_number=self.fernet.encrypt(str(body.get('credit_card_number')).encode()))
             header = HeaderVO(name=body.get('name'), date=body.get('date'), batch_name=body.get('batch_name'),
                               registers=body.get('registers'))
             try:
@@ -67,7 +75,7 @@ class CreditCardController:
                     item = ItemVO(
                         line=lines[i][0:1],
                         batch_number=lines[i][1:7],
-                        credit_card_number=lines[i][7:26]
+                        credit_card_number=self.fernet.encrypt(str(lines[i][7:26]).encode())
                     )
                     item_vo = await self.create_item(header_id=header_vo.id, item_vo=item)
                     responses.append(self.process_response(header=header_vo, item=item_vo))
@@ -82,36 +90,38 @@ class CreditCardController:
         finally:
             file.close()
 
-    async def find_credit_card(self, credit_card_number: str) -> Response:
+    async def find_credit_card(self, header_id: int) -> Response:
         try:
-            if credit_card_number:
-                item = await self.service.find_by_credit_card_number(credit_card_number)
-                if item.header_id is not None:
-                    header = await self.service.find_by_header_id(item.header_id)
-                    if header.name is not None:
-                        return make_response({
-                            'code': HTTP_302_FOUND,
-                            'status': 'FOUND',
-                            'content': {
+            if header_id:
+                responses = []
+                items = await self.service.find_credit_card_by_header_id(header_id=header_id)
+                for item in items:
+                    if item.header_id is not None:
+                        header = await self.service.find_by_header_id(item.header_id)
+                        if header is not None:
+                            response = {
                                 'card_holder_name': header.name,
-                                'card_masked_number': await self.mask_credit_card(item),
+                                'card_masked_number': self.mask_credit_card(item),
                                 'is_active': True
                             }
-                        })
+                            responses.append(response)
+                        else:
+                            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Name Not Found')
                     else:
-                        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Name Not Found')
-                else:
-                    raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Credit Card Number Not Found')
+                        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Credit Card Number Not Found')
+                return make_response({
+                    'code': HTTP_302_FOUND,
+                    'status': 'FOUND',
+                    'content': responses
+                })
         except Exception as e:
             raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-        return
 
-    @staticmethod
-    async def mask_credit_card(item):
-        return item.credit_card_number[0:4] + '-' + 4 * 'X' + '-' + 4 * 'X' + '-' + item.credit_card_number[12:16]
+    def mask_credit_card(self, item):
+        credit_card_number = str(self.fernet.decrypt(item.credit_card_number).decode())
+        return credit_card_number[0:4] + '-' + 4 * 'X' + '-' + 4 * 'X' + '-' + credit_card_number[12:16]
 
-    @staticmethod
-    def process_response(header, item):
+    def process_response(self, header, item):
         response = {
             'id': header.id,
             'name': header.name,
@@ -122,7 +132,7 @@ class CreditCardController:
                 'item_id': item.id,
                 'line': item.line,
                 'batch_number': item.batch_number,
-                'credit_card_number': item.credit_card_number,
+                'credit_card_number': self.mask_credit_card(item),
             },
             'created_at': header.created_at,
             'updated_at': header.updated_at,

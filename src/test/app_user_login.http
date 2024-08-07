@@ -5,8 +5,8 @@ POST http://localhost:8000/rest/api/v1/login
 Content-Type: application/json
 
 {
-  "username": "rsambora",
-  "password": "s1QFNBdz"
+  "username": "sperry",
+  "password": "$dA)yp6("
 }
 
 ###
