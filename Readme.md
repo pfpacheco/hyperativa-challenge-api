@@ -59,3 +59,19 @@ ALLOWED_EXTENSIONS={'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 SQLALCHEMY_DATABASE_URI=mysql+pymysql://admin:qjXy9VDs8Cz4r5emEhubWF7g@database:3306/hyperativa
 
+
+PS:
+
+- Foi ajustado alguns tratamentos de erro da controller para que fosse possível também escrever um teste com pytest como um unittest simples que apoiasse o conhecimento técnico, não apenas em requisições http como nos testes python
+
+- A consulta ao cartão foi substituída pelo uso da id do header na url da request para impedir que os dados sensíveis sejam usados como parâmetro, para portadores com mais de um cartão é trazida a lista dos mesmos
+
+- Foi incluído para os cartões de crédito a criptografia dos dados de cartão no nível da controller, os dados de cartão de crédito estão sendo gravados na base de forma criptografada baseada em uma chave no arquivo env, eles são decriptografados no retorno ao usuário
+
+- Todos os retornos de dados de cartão trazem apenas os 4 primeiros e 4 últimos dígitos dos 16 legíveis
+
+- Foi incluído para o password tanto na criação do usuário, como na consulta ao acesso e login o password criptografado tal qual o número do cartão de crédito, a tabela também foi modificada para comportar a senha criptografada
+
+- Como discutimos, pode ser também uma "symmetric encryption" se houver como fazer isso, no caso seria imprudente deixar o Fernet gerar a key, sob risco de produzir "side-effects"
+*** É importante destacar que só isso não garante a segurança da app, além do jwt é necessário algo que não discutimos hoje, mas configuração do HTTPS respondendo na porta segura 443, por meio do SSL. ****
+
