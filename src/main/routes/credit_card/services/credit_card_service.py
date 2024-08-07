@@ -1,5 +1,3 @@
-from typing import List
-
 from starlette.exceptions import HTTPException
 from starlette.status import HTTP_404_NOT_FOUND, HTTP_422_UNPROCESSABLE_ENTITY
 
