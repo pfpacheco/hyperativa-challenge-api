@@ -51,6 +51,8 @@ SECRET_KEY=sJm}nwNZHt/?M)Y5DF'j_p4rf^S83-.U2(VaC$,d>&y{+v9*P;
 
 JWT_SECRET_KEY=MX9)0x*A*obnNMtX6ujTG#2ZUG+0zAjBXccn?geZ}a#kMi=qHF
 
+LANGFLOW_SECRET_KEY=VUG6KEhFGtODPZyhP0Stw2U9dnPKE5kHOM5zS_U8U_E=
+
 UPLOAD_FOLDER =/home/ppacheco/workspace/python-projects/hyperativa-challenge-api/file_ingestion
 
 ALLOWED_EXTENSIONS={'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
