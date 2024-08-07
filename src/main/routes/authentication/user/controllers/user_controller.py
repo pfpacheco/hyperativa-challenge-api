@@ -1,4 +1,10 @@
+import os
+
+from dotenv import load_dotenv
+
 from datetime import timedelta
+
+from cryptography.fernet import Fernet
 
 from flask import Request, Response, make_response
 from flask_jwt_extended import create_access_token
@@ -16,6 +22,8 @@ from src.main.routes.authentication.user.services.user_service import UserServic
 class UserController:
 
     def __init__(self):
+        load_dotenv()
+        self.fernet = Fernet(os.getenv('LANGFLOW_SECRET_KEY'))
         self.service = UserService()
         self.response = None
 
@@ -28,9 +36,10 @@ class UserController:
                 return make_response({'status_code': HTTP_406_NOT_ACCEPTABLE, 'detail':'Passwords do not match'})
             else:
                 user = UserVO(name=body.get('name'), is_active=body.get('is_active'), username=body.get('username'),
-                              password=body.get('password'), email=body.get('email'))
+                              password=self.fernet.encrypt(str(body.get('password')).encode()), email=body.get('email'))
                 try:
                     user_vo = await self.service.create_user(user)
+                    password = self.fernet.decrypt(str(user_vo.password)).decode()
                     self.response = make_response({'status_code': HTTP_201_CREATED,
                                                    'detail': 'User created successfully',
                                                    'content': {
@@ -38,7 +47,7 @@ class UserController:
                                                         'name': user_vo.name,
                                                         'is_active': user_vo.is_active,
                                                         'username': user_vo.username,
-                                                        'password': user_vo.password.replace(user_vo.password, len(user_vo.password) * '*'),
+                                                        'password': password.replace(password, len(password) * '*'),
                                                         'created_at': user_vo.created_at,
                                                         'updated_at': user_vo.updated_at
                                                    }})
@@ -57,7 +66,7 @@ class UserController:
             if current_user is None:
                 return make_response({'status_code': HTTP_404_NOT_FOUND, 'detail': 'Not found'})
             else:
-                if current_user.password == request.json.get('password'):
+                if str(self.fernet.decrypt(current_user.password).decode()) == request.json.get('password'):
                     access_token = create_access_token(identity=current_user.username,
                                                        expires_delta=timedelta(minutes=30))
                     return make_response({'status_code': HTTP_202_ACCEPTED, 'authorization': f'Bearer {access_token}',

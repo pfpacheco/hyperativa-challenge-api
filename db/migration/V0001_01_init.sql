@@ -9,21 +9,19 @@ create table
         name varchar(255) not null,
         is_active boolean not null default True,
         username varchar(8) not null,
-        password varchar(8) not null,
+        password varchar(255) not null,
         created_at datetime not null,
         updated_at datetime not null,
         constraint primary key pk_t_user (id),
         constraint unique uc_t_user (name)
 );
 
-insert into
-    hyperativa.t_user(id, name, is_active, username, password, created_at, updated_at)
-    values (null, 'Richie Sambora', true, 'rsambora', 's1QFNBdz', now(), now());
-
-insert into
-    hyperativa.t_user(id, name, is_active, username, password, created_at, updated_at)
-    values (null, 'test', true, 'test', 'test', now(), now());
-
+insert into t_user (id, name, is_active, username, password, created_at, updated_at)
+values (null, 'Steve Perry',
+        1, 'sperry',
+        'gAAAAABmsuqqBy84s5d9MM6ORqXZciKaLXvxEUSEiFPcip8Btl5oWpw5EvPRo_xlKH9_PMQHIY2vrgc9-ws4D3IrTzxDnXzwLg==',
+        '2024-08-07 03:31:40',
+        '2024-08-07 03:31:40');
 
 drop table
     if exists
@@ -56,7 +54,7 @@ create table
         header_id bigint not null,
         line int not null,
         batch_number int not null,
-        credit_card_number varchar(19) not null,
+        credit_card_number varchar(255) not null,
         created_at timestamp not null,
         updated_at timestamp not null,
         constraint unique uc_t_item(credit_card_number),

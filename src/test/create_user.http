@@ -4,25 +4,12 @@
 
 ## Already Created
 
-### Second User
-
-POST http://localhost:8000/rest/api/v1/create_user
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
-
-{
-    "name": "Steve Perry",
-    "is_active": "True",
-    "username": "sperry",
-    "password": "$dA)yp6(",
-    "password_confirmation": "$dA)yp6("
-}
 
 ### Third User
 
 POST http://localhost:8000/rest/api/v1/create_user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzAwMTkzOCwianRpIjoiZGUxMjU2ZjktMzY0ZC00YTk0LWI0ZDUtZGZlNGMyYjViNTM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InNwZXJyeSIsIm5iZiI6MTcyMzAwMTkzOCwiY3NyZiI6IjRhNGY5MGFjLWE0M2ItNGJmZC04ZGM3LTc1ZGNkMjVkZGU5NyIsImV4cCI6MTcyMzAwMzczOH0.Eo1Jtpg7W31HBPYI4FAak3nOgozmkVWSwLM3UVQJ31g
 
 {
     "name": "Tony Morello",
@@ -36,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
 
 POST http://localhost:8000/rest/api/v1/create_user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMjcxODQ4MCwianRpIjoiNDM0MDJkMjEtYjViZS00OTg2LWJlMTUtNjViODM1NjExYTNhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InJzYW1ib3JhIiwibmJmIjoxNzIyNzE4NDgwLCJjc3JmIjoiOWRlNjEzOWYtN2NiNC00Mjg5LTg4NDAtY2RmZjA2NzljYzkyIiwiZXhwIjoxNzIyNzIwMjgwfQ.a-pbQq2TyX-YlsXTKElkn6yfVO3rA4GI1Dq54y_g0EI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMzAwMTkzOCwianRpIjoiZGUxMjU2ZjktMzY0ZC00YTk0LWI0ZDUtZGZlNGMyYjViNTM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InNwZXJyeSIsIm5iZiI6MTcyMzAwMTkzOCwiY3NyZiI6IjRhNGY5MGFjLWE0M2ItNGJmZC04ZGM3LTc1ZGNkMjVkZGU5NyIsImV4cCI6MTcyMzAwMzczOH0.Eo1Jtpg7W31HBPYI4FAak3nOgozmkVWSwLM3UVQJ31g
 
 {
     "name": "Jim Jones",

@@ -25,11 +25,11 @@ async def credit_card():
         return HTTPException(status_code=HTTP_405_METHOD_NOT_ALLOWED, detail='Method Not Allowed')
 
 
-@route.route('/rest/api/v1/credit_card/<credit_card_number>/', methods=['GET'])
+@route.route('/rest/api/v1/credit_card/<header_id>/', methods=['GET'])
 @jwt_required()
-async def get_credit_card(credit_card_number: str):
+async def get_credit_card(header_id: int):
     if request.method == 'GET':
         controller: CreditCardController = CreditCardController()
-        return await controller.find_credit_card(credit_card_number=credit_card_number)
+        return await controller.find_credit_card(header_id=header_id)
     else:
         return HTTPException(status_code=HTTP_405_METHOD_NOT_ALLOWED, detail='Method Not Allowed')

@@ -53,13 +53,13 @@ class CreditCardService:
             self.db.flush()
         return item
 
-    async def find_by_credit_card_number(self, credit_card_number: str) -> ItemVO:
+    async def find_credit_card_by_header_id(self, header_id: int) -> ItemVO:
         try:
-            if credit_card_number is None:
+            if header_id is None:
                 raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail='Credit Card Number not found')
             else:
-                item_vo = self.db.query(ItemModel).filter(ItemModel.credit_card_number == credit_card_number).first()
-                return item_vo
+                items_vo = self.db.query(ItemModel).filter(ItemModel.header_id == header_id).all()
+                return items_vo
         except Exception as httpException:
             raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(httpException))
         finally:
